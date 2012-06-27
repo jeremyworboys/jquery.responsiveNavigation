@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Responsive Navigation Test Suite</title>
-  <!-- Load local jQuery, removing access to $ (use jQuery, not $). -->
-  <script src="../libs/jquery/jquery.js"></script>
-  <script>jQuery.noConflict()</script>
-  <!-- Load local QUnit (grunt requires v1.0.0 or newer). -->
-  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
-  <script src="../libs/qunit/qunit.js"></script>
-  <!-- Load local lib and tests. -->
-  <script src="../src/jquery.ResponsiveNavigation.js"></script>
-  <script src="jquery.ResponsiveNavigation_test.js"></script>
+    <meta charset="utf-8">
+    <title>Responsive Navigation Test Suite</title>
+    <!-- Load local jQuery, removing access to $ (use jQuery, not $). -->
+    <script src="../libs/jquery/jquery.js"></script>
+    <script>jQuery.noConflict()</script>
+    <!-- Load local QUnit (grunt requires v1.0.0 or newer). -->
+    <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+    <script src="../libs/qunit/qunit.js"></script>
+    <!-- Load local lib and tests. -->
+    <script src="../src/jquery.ResponsiveNavigation.js"></script>
+    <script src="jquery.ResponsiveNavigation_test.js"></script>
 </head>
 <body>
-  <h1 id="qunit-header">Responsive Navigation Test Suite</h1>
-  <h2 id="qunit-banner"></h2>
-  <div id="qunit-testrunner-toolbar"></div>
-  <h2 id="qunit-userAgent"></h2>
-  <ol id="qunit-tests"></ol>
-  <div id="qunit-fixture">
-    <span>lame test markup</span>
-    <span>normal test markup</span>
-    <span>awesome test markup</span>
-  </div>
+    <h1 id="qunit-header">Responsive Navigation Test Suite</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">
+        <div id="test-header">
+            <nav data-label="first" data-order="2">
+                <a href="#first-link">First Link</a>
+                <a href="#second-link">Second Link</a>
+                <a href="#third-link">Third Link</a>
+            </nav>
+
+            <nav data-label="second" data-order="1">
+                <a href="#first-link">First Link</a>
+                <a href="#second-link">Second Link</a>
+            </nav>
+        </div>
+    </div>
 </body>
 </html>

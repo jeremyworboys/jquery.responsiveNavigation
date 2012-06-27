@@ -4,25 +4,133 @@
  *
  * Copyright (c) 2012 Jeremy Worboys
  * Licensed under the ☺ Licence.
+ * http://licence.visualidiot.com
  */
 
-(function($) {
+(function($, undefined) {
 
-    // Collection method.
-    $.fn.awesome = function() {
+    $.fn.responsiveNavigation = function(search, options) {
+
+        // Default parameter values
+        if (search === undefined) search = "nav";
+
+        // Default options
+        var opts = $.extend({
+                "hasWrapper":   true,
+
+                "wrapper":      "nav",
+                "wrapperClass": "responsive-navigation",
+                "wrapperId":    "",
+
+                "selectClass":  "responsive-navigation",
+                "selectId":     "",
+
+                "defaultText":  "Navigation...",
+
+                "group":        true,
+                "groupLabel":   "label",
+                "groupOrder":   "order"
+            }, options),
+
+        // Sorting algorithm for ordering option groups
+            optgroupSort = function($a, $b) {
+                var a = parseInt($a.data("order"), 10),
+                    b = parseInt($b.data("order"), 10);
+                if ((isNaN(a) && isNaN(b)) || a === b) {
+                    return 0;
+                }
+                else if (isNaN(b) || a < b) {
+                    return -1;
+                }
+                return 1;
+            };
+
+        // Process each $header
         return this.each(function() {
-            $(this).html('awesome');
+            var $header =   $(this),
+                $navs =     $header.find(search),
+                optgroups = [],
+                $select;
+
+            // Make sure we can find a $nav element
+            if ($navs.length < 1) { return; }
+
+            // Process all of the $navs
+            $navs.each(function() {
+                var $nav =      $(this),
+                    options =   [];
+
+                // Find all links in this nav
+                $nav
+                    .find("a")
+                        .each(function() {
+                            var $link = $(this);
+
+                            // Pull them out as options
+                            options.push(
+                                $("<option>")
+                                    .val($link.attr("href"))
+                                    .text($link.text())
+                            );
+                        });
+
+                // Group options if required
+                if (opts.group) {
+                    // Create group
+                    var $optgroup = $("<optgroup>")
+                        .attr("label", $nav.data(opts.groupLabel))
+                        .data("order", $nav.data(opts.groupOrder));
+
+                    // Add options to group
+                    $.each(options, function(i, opt) {
+                        $optgroup.append(opt);
+                    });
+
+                    // Swap out options for optgroup to be added to select
+                    options = $optgroup;
+                }
+
+                // Add group (or options if ungrouped) to optgroup
+                $.each(options, function(i, grp) {
+                    optgroups.push($(grp));
+                });
+            });
+
+
+            // Sort option groups (only if grouped)
+            if (opts.group) {
+                optgroups = optgroups.sort(optgroupSort);
+            }
+
+            // Create the select element
+            $select = $("<select>")
+                .addClass(opts.selectClass)
+                .attr("id", opts.selectId);
+
+            // Add default option to select
+            $select.append(
+                $("<option>")
+                    .text(opts.defaultText)
+                    .attr("disabled", "disabled")
+            );
+
+            // Add options to the select element
+            $(optgroups).each(function() {
+                $select.append($(this));
+            });
+
+            // Wrap the select element if required
+            if (opts.hasWrapper) {
+                $select = $("<" + opts.wrapper + ">")
+                    .addClass(opts.wrapperClass)
+                    .attr("id", opts.wrapperId)
+                    .append($select);
+            }
+
+            // Add select element to outer wrapper (usually a header)
+            $header.append($select);
         });
-    };
 
-    // Static method.
-    $.awesome = function() {
-        return 'awesome';
-    };
-
-    // Custom selector.
-    $.expr[':'].awesome = function(elem) {
-        return elem.textContent.indexOf('awesome') >= 0;
     };
 
 }(jQuery));
