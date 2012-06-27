@@ -11,19 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com.au/jeremyworboys/jquery.responsiveNavigation.git"
+    "url": "git://github.com/jeremyworboys/jquery.responsiveNavigation.git"
   },
   "bugs": {
     "url": "http://github.com/jeremyworboys/jquery.responsiveNavigation/issues"
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "/blob/master/LICENSE-MIT"
-    },
-    {
-      "type": "GPL",
-      "url": "/blob/master/LICENSE-GPL"
+      "type": "☺",
+      "url": "http://licence.visualidiot.com/"
     }
   ],
   "dependencies": {

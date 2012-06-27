@@ -35,5 +35,5 @@ _Also, please don't edit files in the "dist" subdirectory as they are generated 
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Jeremy Worboys  
-Licensed under the MIT, GPL licenses.
+Copyright (c) 2012 Jeremy Worboys
+Licensed under the [☺ Licence](http://licence.visualidiot.com/).
