@@ -1,0 +1,33 @@
+{
+  "name": "jquery.ResponsiveNavigation",
+  "title": "Responsive Navigation",
+  "description": "Easy to use, semantic approach to responsive navigation.",
+  "version": "0.1.0",
+  "homepage": "",
+  "author": {
+    "name": "Jeremy Worboys",
+    "email": "jeremy@complexcompulsions.com",
+    "url": "http://complexcompulsions.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com.au/jeremyworboys/jquery.responsiveNavigation.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jeremyworboys/jquery.responsiveNavigation/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "/blob/master/LICENSE-GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.5"
+  },
+  "keywords": []
+}
