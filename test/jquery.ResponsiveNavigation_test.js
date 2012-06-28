@@ -62,6 +62,7 @@
 
         equal($("#test-header-with-lists").find(".responsive-nav-wrapper select optgroup").length, 3, "groups are created");
         equal($("#test-header-with-lists").find(".responsive-nav-wrapper select option").length, 8, "select element contains all links + the default option");
+        equal($("#test-header-with-lists").find(".responsive-nav-wrapper select optgroup:eq(1)").attr("label"), "first nav", "groups are labeled correctly");
         equal($("#test-header-with-lists").find("ul").length, 3, "leaves original nodes in DOM");
     });
 
