@@ -23,7 +23,11 @@
     }
   ],
   "dependencies": {
+    "grunt": "~0.3.10",
     "jquery": "~1.5"
+  },
+  "scripts" : {
+    "test": "grunt travis --verbose"
   },
   "keywords": []
 }

@@ -1,4 +1,4 @@
-# Responsive Navigation
+# Responsive Navigation [![Build Status](https://secure.travis-ci.org/jeremyworboys/jquery.responsiveNavigation.png?branch=master)](http://travis-ci.org/jeremyworboys/jquery.responsiveNavigation)
 
 Easy to use, semantic approach to responsive navigation.
 
