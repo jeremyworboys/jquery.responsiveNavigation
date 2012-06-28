@@ -15,10 +15,10 @@
 
                 wrap:         true,
                 wrapper:      "nav",
-                wrapperClass: "responsive-navigation-wrapper",
+                wrapperClass: "responsive-nav-wrapper",
                 wrapperId:    "",
 
-                selectClass:  "responsive-navigation",
+                selectClass:  "responsive-nav",
                 selectId:     "",
 
                 defaultText:  "Navigation...",
