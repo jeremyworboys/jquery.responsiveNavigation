@@ -7,7 +7,7 @@
  * http://licence.visualidiot.com
  */
 
-(function($, undefined) {
+;(function($, undefined) {
 
     $.fn.responsiveNavigation = function(options) {
 
@@ -16,21 +16,22 @@
 
         // Default options
         var opts = $.extend({
-                "search":       "nav",
+                search:       "nav",
+                nested:       true,
 
-                "wrap":         true,
-                "wrapper":      "nav",
-                "wrapperClass": "responsive-navigation-wrapper",
-                "wrapperId":    "",
+                wrap:         true,
+                wrapper:      "nav",
+                wrapperClass: "responsive-navigation-wrapper",
+                wrapperId:    "",
 
-                "selectClass":  "responsive-navigation",
-                "selectId":     "",
+                selectClass:  "responsive-navigation",
+                selectId:     "",
 
-                "defaultText":  "Navigation...",
+                defaultText:  "Navigation...",
 
-                "group":        true,
-                "groupLabel":   "label",
-                "groupOrder":   "order"
+                group:        true,
+                groupLabel:   "label",
+                groupOrder:   "order"
             }, options),
 
         // Sorting algorithm for ordering option groups
@@ -59,6 +60,14 @@
             // If there is only one $nav default grouping to off
             if ($navs.length == 1) {
                 opts.group = options.group || false;
+            }
+
+            // If nesting is on, remove nested navs
+            if (opts.nested) {
+                $navs.each(function() {
+                    // Remove from object but put back into the DOM
+                    $(this).find(opts.search).detach().appendTo($header);
+                });
             }
 
             // Process all of the $navs
