@@ -9,16 +9,16 @@
 
 (function($, undefined) {
 
-    $.fn.responsiveNavigation = function(search, options) {
+    $.fn.responsiveNavigation = function(options) {
 
         // Default parameter values
-        if (search === undefined) search = "nav";
         if (options === undefined) options = {};
 
         // Default options
         var opts = $.extend({
-                "hasWrapper":   true,
+                "search":       "nav",
 
+                "wrap":         true,
                 "wrapper":      "nav",
                 "wrapperClass": "responsive-navigation-wrapper",
                 "wrapperId":    "",
@@ -49,7 +49,7 @@
         // Process each $header
         return this.each(function() {
             var $header =   $(this),
-                $navs =     $header.find(search),
+                $navs =     $header.find(opts.search),
                 optgroups = [],
                 $select;
 
@@ -102,7 +102,6 @@
                 });
             });
 
-
             // Sort option groups (only if grouped)
             if (opts.group) {
                 optgroups = optgroups.sort(optgroupSort);
@@ -126,7 +125,7 @@
             });
 
             // Wrap the select element if required
-            if (opts.hasWrapper) {
+            if (opts.wrap) {
                 $select = $("<" + opts.wrapper + ">")
                     .addClass(opts.wrapperClass)
                     .attr("id", opts.wrapperId)

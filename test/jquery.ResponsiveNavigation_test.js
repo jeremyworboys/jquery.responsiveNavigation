@@ -11,7 +11,7 @@
     test("nothing is changed if no nav is found", function() {
         var html = $("#test-header").html();
 
-        ok($("#test-header").responsiveNavigation("b"), "runs when `search` is not found");
+        ok($("#test-header").responsiveNavigation({"search": "b"}), "runs with search option passed");
         equal($("#test-header").html(), html, "nothing was changed if no nav was found");
     });
 
@@ -35,6 +35,11 @@
         ok($("#test-header").responsiveNavigation(), "runs with no options passed");
         equal($("#test-header").find(".responsive-navigation-wrapper select optgroup").length, 0, "no groups are created");
         equal($("#test-header").find(".responsive-navigation-wrapper select option").length, 4, "select element contains all links + the default option");
+    });
+
+    test("uses specified default option text", function() {
+        ok($("#test-header").responsiveNavigation({"defaultText": "Menu"}), "runs with defaultText option passed");
+        equal($("#test-header").find(".responsive-navigation-wrapper select option:eq(0)").text(), "Menu", "defaultText option is used for default option");
     });
 
 }(jQuery));
