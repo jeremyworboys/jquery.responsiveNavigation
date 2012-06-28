@@ -1,11 +1,5 @@
-/*
- * jquery.ResponsiveNavigation
- *
- *
- * Copyright (c) 2012 Jeremy Worboys
- * Licensed under the ☺ Licence.
- * http://licence.visualidiot.com
- */
+/*! Responsive Navigation - v0.1.0 - 2012-06-28
+* Copyright (c) 2012 Jeremy Worboys; Licensed ☺ */
 
 ;(function($, undefined) {
 
