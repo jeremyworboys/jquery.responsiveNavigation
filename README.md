@@ -68,6 +68,8 @@ __groupOrder__
 ## Examples
 - [Basic Usage](https://github.com/complexcompulsions/jquery.ResponsiveNavigation/blob/master/examples/1.basic-usage.md)
 - [Multiple Navs](https://github.com/complexcompulsions/jquery.ResponsiveNavigation/blob/master/examples/2.multiple-navs.md)
+- [Reordering Groups](https://github.com/complexcompulsions/jquery.ResponsiveNavigation/blob/master/examples/3.reordering-groups.md)
+- [Nested Lists](https://github.com/complexcompulsions/jquery.ResponsiveNavigation/blob/master/examples/4.nested-lists.md)
 
 
 ## Contributing
