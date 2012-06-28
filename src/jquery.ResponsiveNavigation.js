@@ -133,6 +133,11 @@
                 $select.append($(this));
             });
 
+            // Add event to change URLs when an option is selected
+            $select.on("change", function() {
+                window.location = $(this).find(":selected").val();
+            });
+
             // Wrap the select element if required
             if (opts.wrap) {
                 $select = $("<" + opts.wrapper + ">")

@@ -24,6 +24,16 @@
         equal($("#test-header").find("nav").length, 3, "leaves original nodes in DOM");
     });
 
+    test("goes to correct url when the value is changed", function() {
+        ok($("#test-header").responsiveNavigation(), "runs with no options passed");
+
+        loc = window.location.toString();
+        val = $("#test-header option:eq(1)").val();
+        $("#test-header select").val(val).change();
+
+        equal(window.location.toString(), loc + val, "changes window.location when the value of the select is changed");
+    });
+
     test("creates groups using default options", function() {
         ok($("#test-header").responsiveNavigation(), "runs with no options passed");
         equal($("#test-header").find(".responsive-nav-wrapper select optgroup").length, 2, "groups are created");
