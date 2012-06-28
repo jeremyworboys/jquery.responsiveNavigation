@@ -13,13 +13,14 @@
 
         // Default parameter values
         if (search === undefined) search = "nav";
+        if (options === undefined) options = {};
 
         // Default options
         var opts = $.extend({
                 "hasWrapper":   true,
 
                 "wrapper":      "nav",
-                "wrapperClass": "responsive-navigation",
+                "wrapperClass": "responsive-navigation-wrapper",
                 "wrapperId":    "",
 
                 "selectClass":  "responsive-navigation",
@@ -54,6 +55,11 @@
 
             // Make sure we can find a $nav element
             if ($navs.length < 1) { return; }
+
+            // If there is only one $nav default grouping to off
+            if ($navs.length == 1) {
+                opts.group = options.group || false;
+            }
 
             // Process all of the $navs
             $navs.each(function() {

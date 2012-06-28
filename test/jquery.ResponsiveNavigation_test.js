@@ -17,12 +17,24 @@
 
     test("creates responsive nav using default options", function() {
         ok($("#test-header").responsiveNavigation(), "runs with no options passed");
-        equal($("#test-header").find("nav.responsive-navigation").length, 1, "wrapper is created");
-        equal($("#test-header").find(".responsive-navigation select").length, 1, "wrapper contains select element");
-        equal($("#test-header").find(".responsive-navigation select option").length, 6, "select element contains all links + the default option");
-        equal($("#test-header").find(".responsive-navigation select optgroup").length, 2, "links are grouped");
-        equal($("#test-header").find(".responsive-navigation select option:eq(0)").text(), "Navigation...", "default option is created");
-        equal($("#test-header").find(".responsive-navigation select optgroup:eq(0)").attr("label"), "second", "groups are ordered correctly");
+        equal($("#test-header").find("nav.responsive-navigation-wrapper").length, 1, "wrapper is created");
+        equal($("#test-header").find(".responsive-navigation-wrapper select").length, 1, "wrapper contains select element");
+        equal($("#test-header").find(".responsive-navigation-wrapper select option:eq(0)").text(), "Navigation...", "default option is created");
+        equal($("#test-header").find(".responsive-navigation-wrapper select option").length, 6, "select element contains all links + the default option");
+    });
+
+    test("creates groups using default options", function() {
+        ok($("#test-header").responsiveNavigation(), "runs with no options passed");
+        equal($("#test-header").find(".responsive-navigation-wrapper select optgroup").length, 2, "links are grouped");
+        equal($("#test-header").find(".responsive-navigation-wrapper select optgroup:eq(0)").attr("label"), "second nav", "groups are ordered correctly");
+    });
+
+    test("no group is created if only one nav is found using default options", function() {
+        $("#test-header #second-nav").remove();
+
+        ok($("#test-header").responsiveNavigation(), "runs with no options passed");
+        equal($("#test-header").find(".responsive-navigation-wrapper select optgroup").length, 0, "no groups are created");
+        equal($("#test-header").find(".responsive-navigation-wrapper select option").length, 4, "select element contains all links + the default option");
     });
 
 }(jQuery));
