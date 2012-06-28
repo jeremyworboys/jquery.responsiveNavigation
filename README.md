@@ -6,8 +6,8 @@ Easy to use, semantic approach to responsive navigation.
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/complexcompulsions/jquery.ResponsiveNavigation/master/dist/jquery.ResponsiveNavigation.min.js
-[max]: https://raw.github.com/complexcompulsions/jquery.ResponsiveNavigation/master/dist/jquery.ResponsiveNavigation.js
+[min]: https://raw.github.com/jeremyworboys/jquery.ResponsiveNavigation/master/dist/jquery.ResponsiveNavigation.min.js
+[max]: https://raw.github.com/jeremyworboys/jquery.ResponsiveNavigation/master/dist/jquery.ResponsiveNavigation.js
 
 In your web page:
 
