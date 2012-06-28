@@ -27,8 +27,8 @@
     test("goes to correct url when the value is changed", function() {
         ok($("#test-header").responsiveNavigation(), "runs with no options passed");
 
-        loc = window.location.toString();
-        val = $("#test-header option:eq(1)").val();
+        var loc = window.location.toString(),
+            val = $("#test-header option:eq(1)").val();
         $("#test-header select").val(val).change();
 
         equal(window.location.toString(), loc + val, "changes window.location when the value of the select is changed");
