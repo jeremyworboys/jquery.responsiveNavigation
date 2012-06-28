@@ -23,7 +23,7 @@ In your web page:
 
 
 ## Documentation
-You may pass settings object when calling the plugin as so.
+You may pass a settings object when calling the plugin.
 
 
 ### Available Options
